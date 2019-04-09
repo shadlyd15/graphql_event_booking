@@ -79,10 +79,12 @@ app.use('/graphql', graphqlHttp({
 
 mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${
 	process.env.MONGO_PASSWORD
-}@dashcluster-szvf0.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`).then(() => {
+}@dashcluster-szvf0.mongodb.net/${process.env.MONGO_DB}?retryWrites=true`)
+.then(() => {
 	app.listen(3000);
 	console.log("Application Started");
-}).catch(
+})
+.catch(
 err => {
 	console.log(err);
 });
